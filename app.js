@@ -18,7 +18,7 @@ app.post("/", (req, res) => {
     const lastName = req.body.lName;
     const email = req.body.email;
 
-    const apiKey = '360dc5183c2bc23ea6dd6d067f7492e9-us21';
+    const apiKey = process.env.MAILCHIMP_API_KEY;
     const listId = 'b5fa6cfb88';
     const dataCenter = apiKey.split('-')[1];
     const url = `https://${dataCenter}.api.mailchimp.com/3.0/lists/${listId}/members`;
